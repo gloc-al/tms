@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://tms_user:tms_password@postgres:5432/tms_db
+      - REDIS_URL=redis://redis:6379
+      - AI_API_KEYS=${AI_API_KEYS}
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - ./backend:/app
+      - tm_data:/app/data
+    networks:
+      - tms_network
+
+  # Frontend Client
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+      - REACT_APP_COMPRESSION_LEVEL=9
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - tms_network
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: tms_db
+      POSTGRES_USER: tms_user
+      POSTGRES_PASSWORD: tms_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - tms_network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - tms_network
+
+  # AI Engine Service
+  ai-engine:
+    build:
+      context: ./backend/services/ai_engine
+      dockerfile: Dockerfile
+    environment:
+      - MODEL_PATH=/models
+      - GPU_ENABLED=${GPU_ENABLED:-false}
+    volumes:
+      - ai_models:/models
+      - ./backend/services/ai_engine:/app
+    networks:
+      - tms_network
+
+  # Translation Memory Engine
+  tm-engine:
+    build:
+      context: ./backend/services/tm_engine
+      dockerfile: Dockerfile
+    environment:
+      - TM_DATABASE_URL=postgresql://tms_user:tms_password@postgres:5432/tm_db
+    depends_on:
+      - postgres
+    volumes:
+      - tm_data:/data
+      - ./backend/services/tm_engine:/app
+    networks:
+      - tms_network
+
+volumes:
+  postgres_data:
+  redis_data:
+  ai_models:
+  tm_data:
+
+networks:
+  tms_network:
+    driver: bridge

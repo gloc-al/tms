@@ -1,0 +1,67 @@
+{
+  "name": "tms-cat-ai-agent-frontend",
+  "version": "1.0.0",
+  "description": "Ultra-lightweight frontend for TMS CAT AI Agent with 14kB page targets",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:performance": "node scripts/performance-test.js",
+    "analyze:bundle": "vite-bundle-analyzer dist",
+    "analyze:compression": "node scripts/compression-test.js",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md}"
+  },
+  "dependencies": {
+    "sqlite3-wasm": "^1.0.0",
+    "lz4": "^0.6.5",
+    "xxhash": "^0.3.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-pwa": "^0.17.0",
+    "vite-bundle-analyzer": "^0.7.0",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "vitest": "^1.0.0",
+    "playwright": "^1.40.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "terser": "^5.20.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/tms-cat-ai-agent.git"
+  },
+  "keywords": [
+    "translation",
+    "TMS",
+    "CAT",
+    "AI",
+    "performance",
+    "compression",
+    "sqlite",
+    "wasm"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "performance": {
+    "budgets": {
+      "bundleSize": "14KB",
+      "renderTime": "16ms",
+      "memoryUsage": "50MB",
+      "cacheHitRate": "90%"
+    }
+  }
+}

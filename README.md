@@ -1,145 +1,546 @@
 # TMS CAT AI Agent: Computer-Assisted Translation AI Agent inside Translation Management System
 
-### Key Points
-- The breakdown of standardized codes for languages, regions, and currencies is accurate and comprehensive.
-- It includes ISO 639 for languages, ISO 3166 for countries, ISO 4217 for currencies, BCP 47 for language tags, and tools like Unicode CLDR and ICU for localization.
-- These standards ensure consistency in global software and systems, especially for multilingual support.
+## 🎯 Project Overview
 
-### Overview
-The provided information details essential standards for internationalization and localization, such as language codes, country identifiers, and currency formats. These are critical for ensuring software works seamlessly across different languages and regions.
+**TMS CAT AI Agent**: AI-assisted translation inside TMS.
 
-### Standards Breakdown
-- **Language Codes (ISO 639)**: Covers codes like `en` for English and `ar` for Arabic, with variants for broader or dialect-specific use. Check [ISO 639-3](https://iso639-3.sil.org) for details.
-- **Country/Region Codes (ISO 3166)**: Includes two-letter codes like `US` for the United States and three-letter codes like `FRA` for France. See [ISO 3166](https://www.iso.org/iso-3166-country-codes.html).
-- **Currency Codes (ISO 4217)**: Uses three-letter codes like `USD` for US Dollar and `SAR` for Saudi Riyal. Find more at [xe.com](https://www.xe.com/iso4217.php) or [iban.com](https://www.iban.com/currency-codes).
-- **Language Tags (BCP 47)**: Combines elements for specific locales, like `ar-SA` for Arabic in Saudi Arabia. Refer to [IANA Language Subtag Registry](https://www.iana.org/assignments/language-subtag-registry).
-- **Locale Data (Unicode CLDR)**: Offers data for formatting dates and currencies, essential for localization. Explore at [Unicode CLDR](https://cldr.unicode.org).
-- **Internationalization Tools (ICU)**: Libraries like ICU help format numbers and dates based on locale, with examples in JavaScript for currency formatting.
+TMS CAT AI Agent accelerates translator productivity and accuracy. This platform binds AI, Translation Memory (TM), Quality Assurance (QA), and workflows. Built for scale, security, and enterprise localization needs. Designed to handle complex scripts and locale variants.
 
-### Importance
-These standards are vital for creating consistent, user-friendly global software, especially for handling right-to-left languages like Arabic and ensuring correct currency display.
+### Vision
+Create a next-generation translation platform for enterprises. Empower translators, managers, and stakeholders with AI. Reduce delivery time, increase consistency, and lower costs. Make localization frictionless across languages and regions.
+
+### Key Features
+- **AI-Powered Translation Assistance** with context-aware suggestions
+- **Robust Translation Memory** integrated across projects and clients
+- **Automated Quality Assurance** and linguistic validation pipelines
+- **Project Management** with roles, tasks, and approvals
+- **Multi-format file support**: XLIFF, TMX, TBX, JSON
+- **Real-time collaborative editor** for simultaneous team editing
+- **Analytics dashboard** with KPIs and cost estimation
+
+## ❓ Why Build This?
+
+### The Business Case
+This product amplifies translator impact and revenue. It shortens cycles and improves translation consistency. Clients want faster time-to-market for multilingual content. AI reduces repetitive work while raising quality standards.
+
+### Market Opportunity
+Why invest in automation and translation intelligence now? Global markets demand localized experiences at scale. Manual processes cannot sustain modern cross-border publishing velocity. AI plus TM yields predictability and measurable cost reductions. Adopting standards secures interoperability across vendor ecosystems.
+
+### Technical Advantage
+Why choose open, modular architecture for deployment? Enterprise customers require customizable, auditable translation flows. A plugin model enables tailored connectors and integrations. Security, compliance, and observability are non-negotiable requirements.
+
+## 🏗️ Technical Architecture
+
+### Core Components
+1. **AI Translation Engine**: Neural machine translation with fine-tuning capabilities
+2. **Translation Memory Database**: Efficient storage and retrieval of translation units
+3. **Project Management Module**: Workflow orchestration and task management
+4. **Quality Assurance Engine**: Automated quality checks and validation
+5. **File Processing Pipeline**: Multi-format file handling and conversion
+6. **Collaboration Platform**: Real-time editing and communication tools
+7. **Analytics Dashboard**: Performance metrics and reporting
+
+### Technology Stack
+- **Backend**: Python (FastAPI) or Node.js (Express) - minimal API surface
+- **AI/ML**: PyTorch/TensorFlow with optional cloud APIs
+- **Database**: PostgreSQL primary, Redis caching, **Client-side SQLite**
+- **Frontend**: **Ultra-lightweight framework** with 14kB page targets
+- **Client-side**: **V8 Isolate Workers**, WASM modules, aggressive compression
+- **File Processing**: Apache Tika and Okapi frameworks
+- **Deployment**: Docker, Kubernetes, cloud-native CI/CD pipelines
+
+## 📋 Development Roadmap
+
+### Phase 1: Foundation (Months 1-3)
+- [ ] **Ultra-Fast Client Architecture**
+  - Implement 14kB page framework with aggressive optimization
+  - Set up V8 Isolate Workers for translation processing
+  - Integrate SQLite WASM for client-side TM storage
+  - Build compression pipeline for text optimization
+  - Create self-improving UX with performance monitoring
+
+- [ ] **Project Setup & Core Systems**
+  - Set up development environment and CI/CD pipeline
+  - Design minimal API surface and database schema
+  - Implement basic authentication and user management
+  - Create modular, performance-focused project structure
+
+- [ ] **Client-Side Translation Engine**
+  - Build local TM lookup and aggregation system
+  - Implement client-side AI inference capabilities
+  - Create compression and decompression algorithms
+  - Set up background workers for TM updates
+
+### Phase 2: Core Features (Months 4-6)
+- [ ] **Translation Memory System**
+  - Design and implement TM database structure
+  - Build TM matching algorithms and fuzzy matching
+  - Create TM import/export functionality
+  - Implement leverage analysis
+
+- [ ] **AI Translation Integration**
+  - Integrate neural machine translation engines
+  - Implement translation suggestion system
+  - Build context-aware translation features
+  - Create custom model training pipeline
+
+### Phase 3: Advanced Features (Months 7-9)
+- [ ] **Quality Assurance Engine**
+  - Implement automated QA checks (consistency, terminology, formatting)
+  - Build quality scoring algorithms
+  - Create review and approval workflows
+  - Integrate linguistic quality validation
+
+- [ ] **Collaboration Tools**
+  - Implement real-time collaborative editing
+  - Build commenting and review systems
+  - Create notification and messaging features
+  - Develop role-based access control
+
+### Phase 4: Enterprise Features (Months 10-12)
+- [ ] **Advanced Analytics**
+  - Build comprehensive reporting dashboard
+  - Implement productivity metrics and KPIs
+  - Create cost estimation and billing features
+  - Develop performance analytics
+
+- [ ] **Integration & API**
+  - Build REST API for third-party integrations
+  - Implement webhook system for external notifications
+  - Create plugin architecture for extensions
+  - Develop client libraries and SDKs
+
+### Phase 5: Optimization & Scaling (Months 13+)
+- [ ] **Performance Optimization**
+  - Optimize translation engine performance
+  - Implement advanced caching strategies
+  - Scale infrastructure for enterprise use
+  - Enhance security and compliance features
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Python 3.9+ or Node.js 16+
+- PostgreSQL 13+
+- Redis 6+
+- Docker and Docker Compose
+
+### Installation
+Clone repository and configure environment variables. Install dependencies and prepare PostgreSQL and Redis. Use docker-compose for a simple local development stack. Follow CONTRIBUTING.md for branching, tests, and PRs.
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/tms-cat-ai-agent.git
+cd tms-cat-ai-agent
+
+# Set up environment
+cp .env.example .env
+# Edit .env with your configuration
+
+# Using Docker Compose (Recommended)
+docker-compose up -d
+
+# Or manual setup
+# Backend setup
+cd backend
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
+# Frontend setup
+cd frontend
+npm install
+npm start
+```
+
+### Configuration
+1. Configure database connections in `.env`
+2. Set up translation API keys (Google Translate, OpenAI, etc.)
+3. Configure file storage (local or cloud)
+4. Set up authentication providers
+
+## 📊 Current Status
+- **Project Phase**: Planning and Architecture
+- **Progress**: 5% (Initial setup and documentation)
+- **Next Milestone**: Phase 1 completion
+- **Expected MVP**: Month 6
+
+## 🌍 Global Strategy & Markets
+
+### Geographic Priorities
+Prioritize markets by content volume and compliance. Focus initially on EU, MENA, APAC, and Americas. Optimize models for language clusters and script complexity. Tailor pricing and SLAs to regional enterprise expectations.
+
+**Regional Considerations:**
+- **EU**: GDPR compliance, vendor data residency, and privacy
+- **MENA**: Right-to-left scripts, dialect support, and formal Arabic
+- **APAC**: Complex scripts, segmentation into language families
+- **Americas**: High-volume content and integration with martech stacks
+
+### Commercial Viability
+Build local partnerships for go-to-market acceleration. Offer sandbox pilots to regional agencies and enterprises. Provide white-label options for language service providers. Enable revenue sharing with reseller and channel partners.
+
+## 👥 Stakeholders & Ecosystem
+
+### Internal Team
+- **Product Management**: defines roadmap and prioritization
+- **Engineering**: builds and maintains core services and APIs
+- **ML Team**: trains and evaluates translation quality models
+- **Localization Ops**: runs TM, glossaries, and QA rules
+- **Security & Compliance**: enforces enterprise security standards
+
+### External Partners
+- **Enterprise Customers**: need reliable, repeatable localization workflows
+- **Language Service Providers**: integrate as partners and resellers
+- **MT Vendors**: provide baseline MT and model access
+- **Integrators and Agencies**: implement localization pipelines at scale
+- **Cloud Providers**: host services and offer managed infra
+
+### Key Suppliers & Partners
+- **Cloud**: AWS / Azure / GCP for compute and managed services
+- **MT & AI**: OpenAI, Google, Microsoft for hosted large language models
+- **I18n Tools**: ICU, Unicode CLDR for locale and formatting data
+- **LSP & Channel**: Top LSPs for volume onboarding and quality management
+
+## 💰 Commercial Models & Pricing
+
+### Pricing Options
+- **Per-word pricing** with subscription discounts for TM reuse
+- **Seat-based pricing** for agency and enterprise editor access
+- **API consumption pricing** for MT and model-hosted inference
+
+### Monetization Strategy
+- **Marketplace** for domain-specific models and glossaries
+- **Revenue share** with LSP partners and reseller channels
+
+### Winners & Losers Analysis
+**Potential Winners:**
+- Large enterprises reducing localization costs significantly
+- Language service providers adopting automation workflows early
+- Translators leveraging AI for higher throughput and earnings
+- Platform integrators offering white-label localization stacks
+
+**Potential Losers:**
+- Legacy manual-only localization shops losing margin competitiveness
+- MT vendors ignoring customization and domain adaptation needs
+- Fragmented TMS vendors without API-first architectures
+
+## 🔒 Security, Privacy & Compliance
+
+### Best Practices
+Encrypt data at rest and transit everywhere. Implement strict RBAC and least privilege access control. Offer on-prem and private-cloud deployments for sensitive customers. Provide data export, deletion, and audit trails for compliance.
+
+### Privacy Controls
+Tokenize PII before sending to external MT vendors. Allow customers to opt out of aggregate model training. Maintain clear data processing agreements and SOPs.
+
+## ⚡ Ultra-Fast Client-Side Architecture
+
+### Performance Philosophy
+**14kB Page Target**: Every rendered page must stay under 14kB for instant loading. Aggressive tree-shaking, code splitting, and compression optimization. Client-side rendering with maximum calculation and translation aggregation locally.
+
+### Client-Side Processing Engine
+```javascript
+// V8 Isolate Workers for translation processing
+class TranslationWorker {
+  constructor() {
+    this.worker = new Worker('/workers/translation-isolate.js');
+    this.sqlite = new SQLiteWasm('/data/tm.db');
+  }
+
+  async processTranslation(text, sourceLocale, targetLocale) {
+    // Client-side TM lookup and aggregation
+    const tmMatches = await this.sqlite.exec(`
+      SELECT target, score FROM translation_memory 
+      WHERE source_hash = ? AND source_locale = ? AND target_locale = ?
+      ORDER BY score DESC LIMIT 10
+    `, [hash(text), sourceLocale, targetLocale]);
+
+    // V8 isolate processing for AI suggestions
+    return this.worker.postMessage({
+      text, sourceLocale, targetLocale, tmMatches
+    });
+  }
+}
+```
+
+### Client-Side Data Management
+- **SQLite WASM**: Local Translation Memory with 50MB+ capacity
+- **IndexedDB**: Project files, user preferences, and cache management
+- **Web Workers**: Background TM updates and model inference
+- **Compression**: LZ4/Brotli for TM data, delta compression for updates
+
+### Framework Performance Strategy
+```javascript
+// Ultra-lightweight component system
+const EditorComponent = {
+  render: (state) => `<div class="editor">${state.content}</div>`,
+  mount: (element, props) => {
+    element.innerHTML = EditorComponent.render(props);
+    // Minimal DOM manipulation, maximum performance
+  }
+};
+
+// Self-improving UX with performance monitoring
+class PerformanceOptimizer {
+  track(metric, value) {
+    if (metric === 'renderTime' && value > 16) {
+      this.optimizeRenderer();
+    }
+  }
+  
+  optimizeRenderer() {
+    // Auto-adjust rendering strategy based on performance
+    this.enableVirtualScrolling();
+    this.reduceRenderComplexity();
+  }
+}
+```
+
+### Text Compression & Optimization
+- **Dictionary Compression**: Build locale-specific dictionaries for 70%+ compression
+- **Incremental Updates**: Send only character diffs, not full text
+- **Predictive Preloading**: ML-driven content prefetching based on user patterns
+- **Streaming Decompression**: Progressive text loading with streaming parsers
+
+### Best Practices Implementation
+```typescript
+// Hard control over page size and performance
+interface PageMetrics {
+  bundleSize: number;    // Must be < 14kB
+  renderTime: number;    // Must be < 16ms
+  memoryUsage: number;   // Must be < 50MB
+  cacheHitRate: number;  // Must be > 90%
+}
+
+class PageController {
+  private metrics: PageMetrics;
+  
+  enforceConstraints() {
+    if (this.metrics.bundleSize > 14000) {
+      throw new Error('Page exceeds 14kB limit');
+    }
+    
+    if (this.metrics.renderTime > 16) {
+      this.optimizeRenderPath();
+    }
+  }
+  
+  optimizeRenderPath() {
+    // Aggressive optimization strategies
+    this.enableBatching();
+    this.deferNonCritical();
+    this.useVirtualization();
+  }
+}
+```
+
+## ⚡ Performance & Scaling
+
+### Client-Side Optimization Strategies
+- **Bundle Splitting**: < 14kB initial load, lazy load everything else
+- **V8 Isolate Workers**: Parallel processing for TM matching and AI inference
+- **SQLite Client**: Local TM storage with millions of entries, sub-millisecond queries
+- **Compression Pipeline**: 80%+ text compression with domain-specific dictionaries
+- **Self-Improving UX**: Auto-optimization based on user interaction patterns
+
+### Server-Side Optimization
+- **Debloating**: Trim vendor SDKs to required runtime components only
+- **Model Compression**: Quantize models to INT8/FP16 for smaller inference footprints
+- **Storage**: Chunk TM entries and use columnar compression for DBs
+- **Caching**: Edge caching for static assets and locale bundles
+
+### DevOps & Scaling
+- **Caching**: Result caching for MT suggestions with eviction policies
+- **Scaling**: Autoscale workers using queue depth and latency signals
+- **Deployment**: Use canary deployments for model and feature rollouts
+
+### Performance Monitoring
+- **Client Metrics**: Bundle size, render time, memory usage, cache hit rates
+- **Translation Metrics**: TM lookup speed, AI inference latency, compression ratios
+- **User Experience**: First paint, time to interactive, translation throughput
+- **Self-Optimization**: Automatic performance tuning based on real-time metrics
+
+## 🤝 Contributing
+Follow conventional commits and feature-branch workflows. All PRs require tests, docs, and maintainers approval. Keep modules small and dependency-free where possible.
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests and documentation
+5. Submit a pull request
+
+## 📁 Recommended Project Structure
+
+```
+tms-cat-ai-agent/
+├── README.md                    # Primary repository readme and project overview
+├── LICENSE                      # MIT license file and contributor agreement reference
+├── CONTRIBUTING.md              # Contribution guidelines, branch policies, and CI rules
+├── docker-compose.yml           # Local dev composition for backend, frontend, db, redis
+├── k8s/                        # Kubernetes manifests, helm charts, and ingress configs
+├── infra/                      # Terraform and cloud infrastructure as code templates
+├── docs/                       # Generated docs, API specs, and architecture diagrams
+├── scripts/                    # Developer tooling and maintenance helpers
+├── backend/                    # API implementation, services, and feature modules
+│   ├── app/                    # FastAPI app or Express app entrypoints and routers
+│   ├── services/               # AI, TM, QA, and file-processing service modules
+│   │   ├── ai_engine/          # Model training, fine-tuning, and inference scripts
+│   │   ├── tm_engine/          # Translation Memory store and fuzzy matching
+│   │   ├── qa_engine/          # Rule engines, regex checks, and scoring modules
+│   │   └── file_processor/     # Format parsers, converters, and sanitizers
+│   ├── models/                 # DB models, ORM migrations, and schemas
+│   ├── tests/                  # Unit and integration tests with fixtures
+│   └── Dockerfile              # Backend image build definition and optimizations
+├── frontend/                   # Ultra-lightweight client with 14kB page targets
+│   ├── src/                    # Minimal components, performance-optimized utilities
+│   │   ├── workers/            # V8 Isolate Workers for translation processing
+│   │   ├── compression/        # Text compression and optimization modules
+│   │   ├── sqlite/             # Client-side SQLite TM management
+│   │   └── performance/        # Self-improving UX and monitoring
+│   ├── public/                 # Compressed static assets and locale bundles
+│   ├── tests/                  # Performance tests and component validation
+│   └── Dockerfile              # Frontend build with aggressive optimization
+├── integrations/               # Connectors, SDKs, and example integrations
+│   ├── connectors/             # Plugins for Google, OpenAI, MT vendors, and CMS
+│   ├── webhooks/               # Webhook receivers and delivery retry logic
+│   └── sdk/                    # Client SDKs and example integrations
+└── ops/                        # Operations and monitoring
+    ├── monitoring/             # Prometheus, Grafana, and alerting rules
+    ├── logging/                # ELK or vector configs and retention policies
+    └── security/               # Secrets management, RBAC policies, and audits
+```
+
+### Strategic Partners
+- **Local LSP Consortium** - Group of major Language Service Providers
+- **Strategic VC Partners** - Investors and early-stage backers
+
+## 🎯 Next Steps & Roadmap
+
+### Immediate Priorities
+- Add governance model and data residency policies
+- Create partner onboarding packs for LSPs and resellers
+- Prioritize MVP features and enterprise pilot customers
+- Build SDKs, webhooks, and low-friction integration templates
+
+### Security & Safety Notes
+For security reviews and surface discovery only. Never use for unlawful reconnaissance or privacy invasion. Use dorks strictly for defensive security audits. Obtain explicit permission before scanning third-party surfaces. Document findings and remediate publicly accessible secrets immediately.
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-### Comprehensive Analysis of Language- and Region-Oriented Standardized Codes
+## 📚 Appendix: Internationalization Standards Reference
 
-This section provides an in-depth examination of the standardized codes for languages, regions, and currencies, as outlined in the provided breakdown. The analysis confirms the accuracy and comprehensiveness of the information, detailing each standard, its purpose, variants, examples, and supporting resources. It also includes implementation guidelines and additional tools for developers, ensuring a thorough understanding for both technical and non-technical audiences.
+This section provides comprehensive information about the standardized codes for languages, regions, and currencies that are essential for implementing internationalization and localization features in the TMS CAT AI Agent.
 
-#### Introduction to Standardization in Internationalization and Localization
-Standardized codes for languages, regions, and currencies are foundational for internationalization (i18n) and localization (L10n), ensuring consistency across global systems. These standards facilitate seamless communication, data exchange, and user experience in multilingual and multicultural environments. The provided breakdown covers key standards like ISO 639, ISO 3166, ISO 4217, BCP 47, Unicode CLDR, and ICU, each serving specific roles in global software development.
+### Standards Overview
+These standards are fundamental for implementing robust internationalization and localization features in translation management systems:
 
-#### Detailed Breakdown of Standards
+- **Language Codes (ISO 639)**: Covers codes like `en` for English and `ar` for Arabic, with variants for broader or dialect-specific use
+- **Country/Region Codes (ISO 3166)**: Includes two-letter codes like `US` for the United States and three-letter codes like `FRA` for France
+- **Currency Codes (ISO 4217)**: Uses three-letter codes like `USD` for US Dollar and `SAR` for Saudi Riyal
+- **Language Tags (BCP 47)**: Combines elements for specific locales, like `ar-SA` for Arabic in Saudi Arabia
+- **Locale Data (Unicode CLDR)**: Provides data for formatting dates and currencies, essential for localization
+- **Internationalization Tools (ICU)**: Libraries that help format numbers and dates based on locale
 
-1. **ISO 639: Language Codes**
-   - **Purpose**: Defines codes for identifying languages, essential for software localization and multilingual support.
-   - **Variants**:
-     - **ISO 639-1**: Two-letter codes for common languages (e.g., `en` for English, `fr` for French).
-     - **ISO 639-2**: Three-letter codes for broader language coverage (e.g., `ara` for Arabic).
-     - **ISO 639-3**: Extends to all known languages, including dialects (e.g., `arb` for Standard Arabic).
-   - **Examples**: `zh` (Chinese), `es` (Spanish), `ja` (Japanese).
-   - **Resources**: 
-     - [ISO 639-3 Online](https://iso639-3.sil.org) for comprehensive language codes.
-     - [Library of Congress](https://www.loc.gov/standards/iso639-2/) for ISO 639-2 details.
-   - **Verification**: The information aligns with official sources, confirming ISO 639-3's role in covering dialects and ISO 639-2's broader coverage, with examples like `en` and `ar` being standard.
+### Importance for TMS CAT AI Agent
+These standards are vital for the TMS CAT AI Agent to:
+- **Handle Multilingual Content**: Properly identify and process content in different languages
+- **Support Global Workflows**: Manage translation projects across different regions and cultures
+- **Ensure Quality Consistency**: Apply appropriate formatting and validation rules based on locale
+- **Enable Accurate Machine Translation**: Provide proper language context to AI translation engines
+- **Support Right-to-Left Languages**: Handle complex scripts like Arabic and Hebrew correctly
 
-2. **ISO 3166: Country/Region Codes**
-   - **Purpose**: Provides codes for countries and territories, ensuring consistency in global systems like internet domains and postal services.
-   - **Variants**:
-     - **ISO 3166-1 Alpha-2**: Two-letter codes (e.g., `US` for United States, `SA` for Saudi Arabia).
-     - **ISO 3166-1 Alpha-3**: Three-letter codes (e.g., `FRA` for France).
-     - **ISO 3166-1 Numeric**: Three-digit codes (e.g., `840` for the US).
-   - **Examples**: `IN` (India), `BR` (Brazil).
-   - **Resources**: [ISO 3166 Country Codes](https://www.iso.org/iso-3166-country-codes.html) for official listings.
-   - **Verification**: The breakdown matches the official documentation, with examples like `US` and `SA` confirmed, and the inclusion of Alpha-2, Alpha-3, and Numeric variants verified.
+### Implementation in Translation Systems
+For translation management systems, these standards enable:
+1. **Project Localization**: Automatically configure projects based on source/target language pairs
+2. **Quality Assurance**: Apply locale-specific validation rules and formatting checks
+3. **Translation Memory Matching**: Improve TM matching accuracy by considering linguistic variants
+4. **File Processing**: Handle locale-specific file formats and encoding requirements
+5. **User Interface Adaptation**: Display appropriate interfaces based on user's locale
 
-3. **ISO 4217: Currency Codes**
-   - **Purpose**: Defines three-letter codes for currencies, crucial for financial systems and e-commerce.
-   - **Examples**: `USD` (US Dollar), `SAR` (Saudi Riyal), `EUR` (Euro), `JPY` (Japanese Yen).
-   - **Resources**: 
-     - [xe.com](https://www.xe.com/iso4217.php) for a free list of currency codes.
-     - [iban.com](https://www.iban.com/currency-codes) for additional currency details.
-   - **Verification**: The examples align with listings on both [xe.com](https://www.xe.com/iso4217.php) and [iban.com](https://www.iban.com/currency-codes), confirming codes like `USD` and `SAR`, with a table from [iban.com](https://www.iban.com/currency-codes) showing:
-     | Country              | Currency          | Code | Number |
-     |----------------------|-------------------|------|--------|
-     | AFGHANISTAN          | Afghani           | AFN  | 971    |
-     | AUSTRALIA            | Australian Dollar | AUD  | 036    |
-     | SAUDI ARABIA         | Saudi Riyal       | SAR  | 682    |
-     This table illustrates the alphabetic and numeric codes, matching the user's examples.
+### Technical Implementation Approach
 
-4. **BCP 47 (RFC 5646): Language Tags**
-   - **Purpose**: Combines language, region, script, and variant codes for locale-specific formatting, used in web standards and software.
-   - **Structure**: Follows `language[-script][-region][-variant]` (e.g., `ar-SA` for Arabic in Saudi Arabia, `zh-Hans-CN` for Simplified Chinese in China).
-   - **Examples**: `en-US` (English, United States), `ar-SA` (Arabic, Saudi Arabia).
-   - **Resources**: [IANA Language Subtag Registry](https://www.iana.org/assignments/language-subtag-registry) for detailed subtag lists.
-   - **Verification**: The structure and examples align with the registry, confirming `ar-SA` and `zh-Hans-CN` as valid, with detailed subtag tables showing:
-     | Subtag | Description       | Added       | Macrolanguage | Scope      |
-     |--------|-------------------|-------------|---------------|------------|
-     | aa     | Afar              | 2005-10-16  | -             | -          |
-     | ar     | Arabic            | 2005-10-16  | -             | -          |
-     This confirms the language subtags used in BCP 47 tags.
+The TMS CAT AI Agent will implement these standards through:
 
-5. **Unicode CLDR (Common Locale Data Repository)**
-   - **Purpose**: Provides locale-specific data for formatting dates, currencies, and numbers, essential for user interface localization.
-   - **Examples**: Currency formatting like `$1,234.56` (en-US) vs. `1.234,56 €` (de-DE), and RTL handling like `﷼ ١٠٠` (SAR in Arabic).
-   - **Resources**: [Unicode CLDR Project](https://cldr.unicode.org) for data downloads and documentation.
-   - **Verification**: The examples match the project's description, with CLDR providing XML, JSON, and POSIX formats, used by companies like Apple and Google, confirming its role in localization.
+```python
+# Example: Language detection and validation
+class LanguageHandler:
+    def __init__(self):
+        self.iso639_codes = self.load_iso639_data()
+        self.bcp47_validator = BCP47Validator()
+    
+    def validate_language_pair(self, source_lang: str, target_lang: str) -> bool:
+        """Validate source and target language codes"""
+        return (self.is_valid_language(source_lang) and 
+                self.is_valid_language(target_lang))
+    
+    def get_locale_config(self, language_tag: str) -> LocaleConfig:
+        """Get locale-specific configuration for translation processing"""
+        return LocaleConfig.from_bcp47(language_tag)
+```
 
-6. **ICU (International Components for Unicode)**
-   - **Purpose**: Offers libraries for implementing internationalization, supporting formatting based on locale.
-   - **Key Features**: Formats currencies, dates, and numbers, handles pluralization (e.g., `1 file` vs. `2 files` in English).
-   - **Example Code (JavaScript)**:
      ```javascript
-     const amount = new Intl.NumberFormat('ar-SA', {
+// Example: Frontend localization
+import { Intl } from 'react-intl';
+
+const TranslationEditor = ({ locale, content }) => {
+  const formatCurrency = (amount, currency) => {
+    return new Intl.NumberFormat(locale, {
        style: 'currency',
-       currency: 'SAR'
-     }).format(100);
-     // Output: ر.س.‏ ١٠٠٫٠٠
-     ```
-   - **Resources**: [ICU Libraries](https://icu.unicode.org/) for implementation across Java, C++, Python, and JavaScript.
-   - **Verification**: The example aligns with ICU's capabilities, with libraries supporting the provided JavaScript code for Arabic currency formatting.
+      currency: currency
+    }).format(amount);
+  };
 
-#### Implementation Guidelines
-The breakdown includes specific guidelines for Arabic and RTL languages, such as:
-- **Currency Placement**: Use `﷼` (U+FDFC) for Saudi Riyal in Arabic, ensuring RTL rendering with CSS (`direction: rtl`).
-- **Decimal and Thousand Separators**: For Arabic (Egypt), format as `ج.م ١٬٠٠٠٫٥٠` (EGP 1,000.50).
-- **Fonts**: Use Unicode-compliant fonts like *Noto Sans Arabic* for proper rendering.
+  return (
+    <div dir={getTextDirection(locale)}>
+      {/* Translation editor content */}
+    </div>
+  );
+};
+```
 
-These guidelines are practical for developers, ensuring correct display in localized applications.
+#### Quick Reference Guide
 
-#### Tools for Developers
-Additional tools include:
-- **CLDR JSON Data**: Available via [cldr-data](https://www.npmjs.com/package/cldr-data) for Node.js, providing locale-specific rules.
-- **ICU Libraries**: Supported in multiple languages, enhancing internationalization efforts.
+| **Standard** | **Purpose** | **Examples** | **TMS Usage** |
+|--------------|-------------|--------------|---------------|
+| **ISO 639** | Language identification | `en`, `ar`, `zh-Hans` | Source/target language specification |
+| **ISO 3166** | Country/region codes | `US`, `SA`, `CN` | Regional localization settings |
+| **ISO 4217** | Currency codes | `USD`, `EUR`, `SAR` | Project pricing and billing |
+| **BCP 47** | Language tags | `ar-SA`, `en-US` | Locale-specific processing |
+| **Unicode CLDR** | Locale data | Date/number formats | UI localization |
+| **ICU** | I18n libraries | Text processing | Implementation tools |
 
-#### Full List Resources
-For comprehensive lists, refer to:
-- **Language Codes**: [ISO 639-2/RA](https://www.loc.gov/standards/iso639-2/), [Ethnologue](https://www.ethnologue.com) for ISO 639-3.
-- **Country/Currency Codes**: [ISO Online Browsing Platform](https://www.iso.org/obp) for official standards.
-- **Locale Data**: [CLDR Charts](https://unicode.org/cldr/charts/latest/) for visual representations.
+#### Key Implementation Considerations
 
-#### Summary Table
-To consolidate, here is a summary of the key standards:
+**For Translation Projects:**
+- Use BCP 47 tags for precise locale identification (`ar-SA` vs `ar-EG`)
+- Implement CLDR data for locale-specific formatting validation
+- Handle RTL languages with proper text direction and layout
+- Support currency formatting for project cost estimation
 
-| **Standard**   | **Purpose**                          | **Examples**               | **Key Resources**                                      |
-|----------------|--------------------------------------|----------------------------|--------------------------------------------------------|
-| ISO 639        | Language codes                      | `en`, `ar`, `zh`           | [ISO 639-3](https://iso639-3.sil.org), [Library of Congress](https://www.loc.gov/standards/iso639-2/) |
-| ISO 3166       | Country/region codes                | `US`, `SA`, `FRA`          | [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) |
-| ISO 4217       | Currency codes                      | `USD`, `SAR`, `EUR`        | [xe.com](https://www.xe.com/iso4217.php), [iban.com](https://www.iban.com/currency-codes) |
-| BCP 47         | Language tags                       | `ar-SA`, `zh-Hans-CN`      | [IANA Registry](https://www.iana.org/assignments/language-subtag-registry) |
-| Unicode CLDR   | Locale-specific data                | Date, currency formats     | [Unicode CLDR](https://cldr.unicode.org)               |
-| ICU            | Internationalization libraries      | Currency formatting code   | [ICU Libraries](https://icu.unicode.org/)              |
+**For Quality Assurance:**
+- Validate translations against locale-specific rules
+- Check proper handling of pluralization and gender forms
+- Ensure correct date/time and number formatting
+- Verify appropriate font rendering for complex scripts
 
-This table encapsulates the core information, verified against official sources.
+**For Machine Translation:**
+- Provide accurate language context to AI engines
+- Handle script variants (Traditional vs Simplified Chinese)
+- Consider regional language differences
+- Implement proper tokenization for different writing systems
 
-#### Conclusion
-The provided breakdown is accurate, covering all major standards for language, region, and currency codes, with practical implementation guidelines and developer tools. These standards are essential for creating consistent, localized software, particularly for handling complex cases like RTL languages and currency formatting. For further exploration, the listed resources provide extensive documentation and data for implementation.
+#### Resources for Implementation
 
-### Key Citations
-- ISO 639-3 language codes [ISO 639-3 Online](https://iso639-3.sil.org)
-- ISO 639-2 language codes [Library of Congress ISO 639-2](https://www.loc.gov/standards/iso639-2/)
-- ISO 3166 country codes [ISO 3166 Country Codes](https://www.iso.org/iso-3166-country-codes.html)
-- ISO 4217 currency codes [xe.com ISO 4217 List](https://www.xe.com/iso4217.php)
-- ISO 4217 currency codes [IBAN Currency Codes](https://www.iban.com/currency-codes)
-- BCP 47 language tags [IANA Language Subtag Registry](https://www.iana.org/assignments/language-subtag-registry)
-- Unicode CLDR locale data [Unicode CLDR Project](https://cldr.unicode.org)
-- ICU internationalization libraries [ICU Libraries Website](https://icu.unicode.org/)
+- **ISO 639-3**: [iso639-3.sil.org](https://iso639-3.sil.org) - Complete language database
+- **ISO 3166**: [iso.org/iso-3166](https://www.iso.org/iso-3166-country-codes.html) - Official country codes
+- **ISO 4217**: [xe.com/iso4217](https://www.xe.com/iso4217.php) - Currency code reference
+- **BCP 47**: [IANA Language Registry](https://www.iana.org/assignments/language-subtag-registry)
+- **Unicode CLDR**: [cldr.unicode.org](https://cldr.unicode.org) - Locale data repository
+- **ICU Libraries**: [icu.unicode.org](https://icu.unicode.org/) - Implementation tools
+
+---
+
+*This README provides a comprehensive overview of the TMS CAT AI Agent project. The internationalization standards section serves as a technical reference for implementing robust multilingual support. For questions or contributions, please refer to the contributing guidelines above.*
